@@ -1,0 +1,22 @@
+* {
+  border: 0px;
+  box-sizing: border-box;
+  color: #CBC9CF;
+}
+
+header {
+  background-color: #46424D;
+}
+
+header h1 {
+  color: #FFF;
+}
+
+main {
+  background-color: #2B2733;
+}
+
+.left-section {
+  background-color: #46424D;
+  box-shadow: 5px 10px #26222D;
+}
