@@ -10,29 +10,32 @@
       <h1>Intention Timer</h1>
     </header>
     <main>
-      <section>
+      <section class='left-section'>
         <h1>New Activity</h1>
-        <div class="">
+        <div class="category-selection">
           <p>Select a category:</p>
-          <button type="button" name="study">Study</button>
-          <button type="button" name="meditate">Meditate</button>
-          <button type="button" name="exercise">Exercise</button>
+          <button id="study-button" type="button" name="study">Study</button>
+          <button id="meditate-button" type="button" name="meditate">Meditate</button>
+          <button id="exercise-button" type="button" name="exercise">Exercise</button>
         </div>
-        <form class="" action="index.html" method="post">
-          <label for="goal">What woudl you like to acomplish during this time?</label>
-          <input type="text" name="goal">
+        <form class="goal-form" action="index.html" method="post">
+          <label for="goal">What would you like to acomplish during this time?</label>
+          <input id="goal-input" type="text" name="goal">
           <label for="duration-minutes">Minutes</label>
-          <input type="text" name="duration-minutes">
+          <input id="duration-minutes" type="text" name="duration-minutes">
           <label for="duration-seconds">Seconds</label>
-          <input type="text" name="duration-seconds">
-          <button type="button" name="button">Start Activity</button>
+          <input id="duration-seconds" type="text" name="duration-seconds">
+          <button id="start-button" type="button" name="button">Start Activity</button>
         </form>
       </section>
     </main>
-    <aside class="">
+    <aside class="right-section">
       <h1>Past Activities</h1>
-      <p>You haven't logged ajy activities yet.</p>
+      <p>You haven't logged any activities yet.</p>
       <p>Complete the form to the left to get started!</p>
     </aside>
   </body>
+  <footer>
+    <script type="text/javascript" src="main.js"></script>
+  </footer>
 </html>
