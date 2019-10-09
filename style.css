@@ -25,6 +25,11 @@ button img {
   width: 50px;
 }
 
+#error-icon {
+  height: 20px;
+  width: 20px;
+}
+
 .alignment {
   display: flex;
   background-color: #2B2733;
@@ -60,4 +65,17 @@ button img {
 .goal-form {
   height: 65%;
   width: 100%;
+}
+
+.goal-form p {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
+form * {
+  margin: 20px;
 }
