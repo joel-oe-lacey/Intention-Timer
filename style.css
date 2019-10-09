@@ -16,15 +16,37 @@ header h1 {
 
 /* temporary width placeholder */
 button {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 105px;
+  border-radius: 4px;
+  border-width: 2px;
+  background-color: #46424D;
+  justify-content: center;
+  align-content: space-between;
+  flex-wrap: wrap;
+  font-size: 15px;
 }
 
 button img {
-  height: 50px;
-  width: 50px;
+  height: 18px;
+  width: 18px;
+  margin-top: 2px;
+  margin-left: 35px;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  display: block;
+  clear: both;
 }
 
+#start-button {
+  height: 30px;
+  width: 180px;
+  border-radius: 2px;
+  background-color: #CBC9CF;
+  color: #46424D;
+  margin-left: 350px;
+  margin-bottom: 30px;
+}
 .alignment {
   display: flex;
   background-color: #2B2733;
@@ -33,6 +55,7 @@ button img {
 .main-content {
   width: 65%;
   height: 90%;
+  align-content: space-between;
 }
 
 .left-section {
@@ -55,9 +78,43 @@ button img {
 .category-selection {
   height: 35%;
   width: 100%;
+  display: inline-block;
+  align-content: space-around;
 }
 
 .goal-form {
   height: 65%;
   width: 100%;
+  margin-top: 50px;
+}
+
+#goal-input {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 450px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #CBC9CF;
+}
+
+#duration-minutes {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #CBC9CF;
+}
+
+#duration-seconds {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #CBC9CF;
 }
