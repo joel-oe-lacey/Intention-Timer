@@ -2,9 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Fix Your Habits</title>
+    <title>Intention Timer</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
-
+    <header>
+      <h1>Intention Timer</h1>
+    </header>
+    <div class="alignment">
+      <main class="main-content">
+        <h1>New Activity</h1>
+        <section class="left-section">
+          <div class="category-selection">
+            <p>Select a category:</p>
+            <button id="study-button" type="button" name="study"><img src="assets/study.svg"/>Study</button>
+            <button id="meditate-button" type="button" name="meditate"><img src="assets/meditate.svg"/>Meditate</button>
+            <button id="exercise-button" type="button" name="exercise"><img src="assets/exercise.svg"/>Exercise</button>
+          </div>
+          <form class="goal-form" action="index.html" method="post">
+            <label for="goal">What would you like to acomplish during this time?</label>
+            <input id="goal-input" type="text" name="goal">
+            <label for="duration-minutes">Minutes</label>
+            <input id="duration-minutes" type="text" name="duration-minutes">
+            <label for="duration-seconds">Seconds</label>
+            <input id="duration-seconds" type="text" name="duration-seconds">
+            <button id="start-button" type="button" name="button">Start Activity</button>
+          </form>
+        </section>
+      </main>
+      <aside class="right-section">
+        <h1>Past Activities</h1>
+        <p>You haven't logged any activities yet.</p>
+        <p>Complete the form to the left to get started!</p>
+      </aside>
+    </div>
   </body>
+  <footer>
+    <script type="text/javascript" src="main.js"></script>
+  </footer>
 </html>
