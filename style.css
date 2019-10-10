@@ -131,3 +131,8 @@ button img {
 form * {
   margin: 20px;
 }
+
+.green {
+  color: #B3FD78;
+  border-color: #B3FD78;
+}

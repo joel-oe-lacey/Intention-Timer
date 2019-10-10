@@ -36,7 +36,7 @@ function valueEntered(inputBox, warning) {
   }
 }
 
-// Execute functions based on user input field interaction, or start button click 
+// Execute functions based on user input field interaction, or start button click
 durationMinutesInput.addEventListener("change", function() {
     numberValidation(durationMinutesInput, durationMinutesWarning);
 });
@@ -48,3 +48,17 @@ durationSecondsInput.addEventListener("change", function() {
 startButton.addEventListener("click", function() {
     valueEntered(goalInput, goalWarning);
 });
+
+
+var study = document.querySelector('#study-button');
+var meditate = document.querySelector('#meditate-button');
+var exercise = document.querySelector('#exercise-button');
+var green = document.querySelector('.green');
+
+study.addEventListener('click', function(){
+  if  (study.classList.contains("green")) {
+    study.classList.remove("green")
+  } else {
+    study.classList.add("green");
+  }
+})
