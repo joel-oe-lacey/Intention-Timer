@@ -22,11 +22,15 @@
           <form class="goal-form" action="index.html" method="post">
             <label for="goal">What would you like to acomplish during this time?</label>
             <input id="goal-input" type="text" name="goal">
+            <p class="hide" id="goal-warning"><img id="error-icon" src="assets/warning.svg"/>A description is required.</p>
             <label for="duration-minutes">Minutes</label>
-            <input id="duration-minutes" type="text" name="duration-minutes">
+            <input id="duration-minutes" type="text" name="duration-minutes" value=5>
+            <p class="hide" id="minutes-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
             <label for="duration-seconds">Seconds</label>
-            <input id="duration-seconds" type="text" name="duration-seconds">
-            <button id="start-button" type="button" name="button">START ACTIVITY</button>
+            <input id="duration-seconds" type="text" name="duration-seconds" value=0>
+            <p class="hide" id="seconds-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
+            <button id="start-button" type="button" name="button">Start Activity</button>
+
           </form>
         </section>
       </main>
