@@ -54,11 +54,14 @@ var study = document.querySelector('#study-button');
 var meditate = document.querySelector('#meditate-button');
 var exercise = document.querySelector('#exercise-button');
 var green = document.querySelector('.green');
+var studyImage = document.querySelector('#study-image');
 
 study.addEventListener('click', function(){
   if  (study.classList.contains("green")) {
-    study.classList.remove("green")
+    study.classList.remove("green");
+    studyImage.src = "assets/study.svg";
   } else {
     study.classList.add("green");
+    studyImage.src = "assets/study-active.svg";
   }
 })
