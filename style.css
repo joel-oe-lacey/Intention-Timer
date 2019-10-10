@@ -67,12 +67,8 @@ button img {
   width: 100%;
 }
 
-.goal-form p {
+.hide {
   opacity: 0;
-}
-
-.show {
-  opacity: 1;
   transition: opacity .25s ease-in-out;
 }
 
