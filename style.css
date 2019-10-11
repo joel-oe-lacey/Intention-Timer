@@ -12,8 +12,12 @@ header {
 
 header h1 {
   color: #FFF;
+  text-align: center;
 }
 
+p {
+  margin-left: 10%;
+}
 /* temporary width placeholder */
 button {
   height: 50px;
@@ -25,6 +29,9 @@ button {
   align-content: space-between;
   flex-wrap: wrap;
   font-size: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5px;
 }
 
 button img {
@@ -61,6 +68,7 @@ button img {
 .main-content {
   width: 65%;
   height: 90%;
+  align-items: center;
 }
 
 .left-section {
@@ -84,20 +92,22 @@ button img {
   height: 35%;
   width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .goal-form {
   height: 65%;
   width: 100%;
   margin-top: 50px;
+  margin-left: 10%
 }
 
 #goal-input {
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 10%; */
+  margin-right: 10%;
   margin-top: 50px;
   margin-bottom: 50px;
-  width: 450px;
+  width: 80%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #CBC9CF;
@@ -135,4 +145,14 @@ form * {
 .green {
   color: #B3FD78;
   border-color: #B3FD78;
+}
+
+.purple {
+  color: #C278FD;
+  border-color: #C278FD;
+}
+
+.red {
+  color: #FD8078;
+  border-color: #FD8078;
 }

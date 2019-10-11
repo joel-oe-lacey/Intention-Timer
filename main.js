@@ -50,11 +50,21 @@ startButton.addEventListener("click", function() {
 });
 
 
+// var study = document.querySelector('#study-button');
+// var meditate = document.querySelector('#meditate-button');
+// var exercise = document.querySelector('#exercise-button');
+// var green = document.querySelector('.green');
+// var studyImage = document.querySelector('#study-image');
+
 var study = document.querySelector('#study-button');
 var meditate = document.querySelector('#meditate-button');
 var exercise = document.querySelector('#exercise-button');
 var green = document.querySelector('.green');
+var purple = document.querySelector('.purple');
+var red = document.querySelector('.blue');
 var studyImage = document.querySelector('#study-image');
+var meditateImage = document.querySelector('#meditate-image');
+var exerciseImage = document.querySelector('#exercise-image');
 
 study.addEventListener('click', function(){
   if  (study.classList.contains("green")) {
@@ -63,5 +73,25 @@ study.addEventListener('click', function(){
   } else {
     study.classList.add("green");
     studyImage.src = "assets/study-active.svg";
+  }
+})
+
+meditate.addEventListener('click', function(){
+  if  (meditate.classList.contains("purple")) {
+    meditate.classList.remove("purple");
+    meditateImage.src = "assets/meditate.svg";
+  } else {
+    meditate.classList.add("purple");
+    meditateImage.src = "assets/meditate-active.svg";
+  }
+})
+
+exercise.addEventListener('click', function(){
+  if  (exercise.classList.contains("red")) {
+    exercise.classList.remove("red");
+    exerciseImage.src = "assets/exercise.svg";
+  } else {
+    exercise.classList.add("red");
+    exerciseImage.src = "assets/exercise-active.svg";
   }
 })
