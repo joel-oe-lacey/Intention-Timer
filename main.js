@@ -102,3 +102,94 @@ function countDisplay(inputSeconds) {
 timerStart.addEventListener("click", function() {
     var counter = setInterval(countDisplay, 1000);
 });
+
+
+
+
+var study = document.querySelector('#study-button');
+var meditate = document.querySelector('#meditate-button');
+var exercise = document.querySelector('#exercise-button');
+var green = document.querySelector('.green');
+var purple = document.querySelector('.purple');
+var red = document.querySelector('.blue');
+var studyImage = document.querySelector('#study-image');
+var meditateImage = document.querySelector('#meditate-image');
+var exerciseImage = document.querySelector('#exercise-image');
+
+study.addEventListener('click', function(){
+  if  (study.classList.contains("green")) {
+    study.classList.remove("green");
+    studyImage.src = "assets/study.svg";
+    goalWarning.classList.remove("green");
+    durationMinutesWarning.classList.remove("green");
+    durationSecondsWarning.classList.remove("green");
+    durationMinutesInput.classList.remove("green-input");
+    durationSecondsInput.classList.remove("green-input");
+    goalInput.classList.remove("green-input");
+  } else {
+    durationMinutesInput.classList.add("green-input");
+    durationMinutesWarning.classList.add("green");
+    durationSecondsInput.classList.add("green-input");
+    durationSecondsWarning.classList.add("green");
+    exercise.classList.remove("red");
+    exerciseImage.src = "assets/exercise.svg";
+    goalInput.classList.add("green-input");
+    goalWarning.classList.add("green");
+    meditate.classList.remove("purple");
+    meditateImage.src = "assets/meditate.svg";
+    study.classList.add("green");
+    studyImage.src = "assets/study-active.svg";
+  }
+})
+
+meditate.addEventListener('click', function(){
+  if  (meditate.classList.contains("purple")) {
+    meditate.classList.remove("purple");
+    meditateImage.src = "assets/meditate.svg";
+    goalWarning.classList.remove("purple");
+    durationMinutesWarning.classList.remove("purple");
+    durationSecondsWarning.classList.remove("purple");
+    durationMinutesInput.classList.remove("purple-input");
+    durationSecondsInput.classList.remove("purple-input");
+    goalInput.classList.remove("purple-input");
+  } else {
+    meditate.classList.add("purple");
+    meditateImage.src = "assets/meditate-active.svg";
+    goalWarning.classList.add("purple");
+    durationMinutesWarning.classList.add("purple");
+    durationSecondsWarning.classList.add("purple");
+    durationMinutesInput.classList.add("purple-input");
+    durationSecondsInput.classList.add("purple-input");
+    goalInput.classList.add("purple-input");
+    study.classList.remove("green");
+    studyImage.src = "assets/study.svg";
+    exercise.classList.remove("red");
+    exerciseImage.src = "assets/exercise.svg";
+  }
+})
+
+exercise.addEventListener('click', function(){
+  if  (exercise.classList.contains("red")) {
+    exercise.classList.remove("red");
+    exerciseImage.src = "assets/exercise.svg";
+    goalWarning.classList.remove("red");
+    durationMinutesWarning.classList.remove("red");
+    durationSecondsWarning.classList.remove("red");
+    durationMinutesInput.classList.remove("red-input");
+    durationSecondsInput.classList.remove("red-input");
+    goalInput.classList.remove("red-input");
+  } else {
+    exercise.classList.add("red");
+    exerciseImage.src = "assets/exercise-active.svg";
+    goalWarning.classList.add("red");
+    durationMinutesWarning.classList.add("red");
+    durationSecondsWarning.classList.add("red");
+    durationMinutesInput.classList.add("red-input");
+    durationSecondsInput.classList.add("red-input");
+    goalInput.classList.add("red-input");
+    study.classList.remove("green");
+    studyImage.src = "assets/study.svg";
+    meditate.classList.remove("purple");
+    meditateImage.src = "assets/meditate.svg";
+  }
+})
