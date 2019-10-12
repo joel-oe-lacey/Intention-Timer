@@ -4,6 +4,10 @@
   color: #CBC9CF;
 }
 
+input {
+    border: none;
+    border-bottom: 1px solid #CBC9CF;
+}
 header {
   background-color: #46424D;
   width: 100%;
@@ -48,6 +52,7 @@ button img {
 #error-icon {
   height: 20px;
   width: 20px;
+  fill: #B3FD78;
 }
 
 #start-button {
@@ -109,8 +114,8 @@ button img {
   margin-bottom: 50px;
   width: 80%;
   background: transparent;
-  border: none;
-  border-bottom: 1px solid #CBC9CF;
+  /* border: none; */
+  /* border-bottom: 1px solid #CBC9CF; */
 }
 
 #duration-minutes {
@@ -119,8 +124,8 @@ button img {
   margin-top: 50px;
   margin-bottom: 50px;
   background: transparent;
-  border: none;
-  border-bottom: 1px solid #CBC9CF;
+  /* border: none;
+  border-bottom: 1px solid #CBC9CF; */
 }
 
 #duration-seconds {
@@ -129,14 +134,14 @@ button img {
   margin-top: 50px;
   margin-bottom: 50px;
   background: transparent;
-  border: none;
-  border-bottom: 1px solid #CBC9CF;
+  /* border: none;
+  border-bottom: 1px solid #CBC9CF; */
 }
 
-.hide {
+/* .hide {
   opacity: 0;
   transition: opacity .25s ease-in-out;
-}
+} */
 
 form * {
   margin: 20px;
@@ -147,12 +152,27 @@ form * {
   border-color: #B3FD78;
 }
 
+.green-input {
+  border: none;
+  border-bottom: 1px solid #B3FD78;
+}
+
 .purple {
   color: #C278FD;
   border-color: #C278FD;
 }
 
+.purple-input {
+  border: none;
+  border-bottom: 1px solid #C278FD;
+}
+
 .red {
   color: #FD8078;
   border-color: #FD8078;
+}
+
+.red-input {
+  border: none;
+  border-bottom: 1px solid #FD8078;;
 }
