@@ -63,7 +63,7 @@ button img {
   height: 90%;
 }
 
-.left-section {
+.left-section, .timer-section {
   background-color: #46424D;
   box-shadow: 5px 10px #26222D;
   height: 85%;
@@ -73,8 +73,15 @@ button img {
   flex-flow: column wrap;
 }
 
+/* temorary hide */
+.timer-section {
+  display: none;
+  /* display: flex;
+  flex-direction: column;
+  align-content: center; */
+}
+
 .right-section {
-  height: 90%;
   width: 35%;
   border-left: 2px solid #46424D;
   padding: 20px;
