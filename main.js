@@ -80,7 +80,6 @@ function toggleTimer(validation) {
   }
 }
 
-
 // function generateAlert() {
 //   var uniqueWarnings = Array.from(new Set(errorLog));
 //   for (var i = 0; i < uniqueWarnings.size; i++) {
@@ -99,11 +98,48 @@ durationSecondsInput.addEventListener("change", function() {
 startButton.addEventListener("click", function() {
     var validation = allValidation();
     toggleTimer(validation);
+    window.inputSeconds = convertInputSeconds();
 });
 
+timerStart.addEventListener("click", function() {
+  setInterval(function() {
+    countDisplay();
+  }, 1000);
+});
 
+// TIMER
 
+// Define input times and conver to date format
+// Convert user input to seconds for smoother operation
+function convertInputSeconds() {
+  //Fetch minute and second inputs
+  var minutes = parseInt(durationMinutesInput.value,10);
+  var seconds = parseInt(durationSecondsInput.value);
 
+  //Convert to seconds
+  var totalSeconds = (minutes * 60) + seconds;
+  return totalSeconds;
+}
+
+// Looped counter and display function
+function countDisplay() {
+    // Convert time back to display valuse
+    var minutes = Math.floor(inputSeconds / 60);
+    var seconds = inputSeconds % 60;
+
+    // Assign display values to innerText
+    time.innerText = `${minutes} : ${seconds}`;
+
+    // Decriment by 1
+    inputSeconds = inputSeconds - 1;
+
+    // Stop setInterval counter when time hits 0
+    if (inputSeconds === 0) {
+      clearInterval(counter);
+    }
+}
+
+// COLOR CHANGE
 var study = document.querySelector('#study-button');
 var meditate = document.querySelector('#meditate-button');
 var exercise = document.querySelector('#exercise-button');
