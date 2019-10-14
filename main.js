@@ -178,12 +178,16 @@ study.addEventListener('click', function(){
     study.classList.remove("green");
     studyImage.src = "assets/study.svg";
     goalWarning.classList.remove("green");
+    activityWarning.classList.remove("green");
     durationMinutesWarning.classList.remove("green");
     durationSecondsWarning.classList.remove("green");
     durationMinutesInput.classList.remove("green-input");
     durationSecondsInput.classList.remove("green-input");
     goalInput.classList.remove("green-input");
   } else {
+    activityWarning.classList.remove("red");
+    activityWarning.classList.remove("purple");
+    activityWarning.classList.add("green");
     durationMinutesInput.classList.remove("red-input");
     durationMinutesInput.classList.remove("purple-input");
     durationMinutesInput.classList.add("green-input");
@@ -216,6 +220,7 @@ meditate.addEventListener('click', function(){
     meditate.classList.remove("purple");
     meditateImage.src = "assets/meditate.svg";
     goalWarning.classList.remove("purple");
+    activityWarning.classList.remove("purple");
     durationMinutesWarning.classList.remove("purple");
     durationSecondsWarning.classList.remove("purple");
     durationMinutesInput.classList.remove("purple-input");
@@ -224,6 +229,9 @@ meditate.addEventListener('click', function(){
   } else {
     meditate.classList.add("purple");
     meditateImage.src = "assets/meditate-active.svg";
+    activityWarning.classList.remove("green");
+    activityWarning.classList.remove("red");
+    activityWarning.classList.add("purple");
     goalWarning.classList.remove("red");
     goalWarning.classList.remove("green");
     goalWarning.classList.add("purple");
@@ -254,6 +262,7 @@ exercise.addEventListener('click', function(){
     exercise.classList.remove("red");
     exerciseImage.src = "assets/exercise.svg";
     goalWarning.classList.remove("red");
+    activityWarning.classList.remove("red");
     durationMinutesWarning.classList.remove("red");
     durationSecondsWarning.classList.remove("red");
     durationMinutesInput.classList.remove("red-input");
@@ -262,6 +271,9 @@ exercise.addEventListener('click', function(){
   } else {
     exercise.classList.add("red");
     exerciseImage.src = "assets/exercise-active.svg";
+    activityWarning.classList.remove("green");
+    activityWarning.classList.remove("purple");
+    activityWarning.classList.add("red");
     goalWarning.classList.remove("green");
     goalWarning.classList.remove("purple");
     goalWarning.classList.add("red");
