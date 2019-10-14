@@ -75,10 +75,10 @@ button img {
 
 /* temorary hide */
 .timer-section {
-  display: none;
-  /* display: flex;
+  /* display: none; */
+  display: flex;
   flex-direction: column;
-  align-content: center; */
+  align-content: center;
 }
 
 .right-section {
@@ -133,6 +133,10 @@ button img {
 .hide {
   opacity: 0;
   transition: opacity .25s ease-in-out;
+}
+
+.remove {
+  display: none;
 }
 
 form * {
