@@ -82,7 +82,6 @@ study.addEventListener('click', function(){
     durationSecondsInput.classList.remove("red-input");
     durationSecondsInput.classList.remove("purple-input");
     durationSecondsInput.classList.add("green-input");
-    // durationSecondsInput.classList.remove("green-input");
     durationSecondsWarning.classList.remove("red");
     durationSecondsWarning.classList.remove("purple");
     durationSecondsWarning.classList.add("green");
@@ -169,7 +168,7 @@ exercise.addEventListener('click', function(){
     durationSecondsInput.classList.add("red-input");
     goalInput.classList.remove("green-input");
     goalInput.classList.remove("purple-input");
-    goalInput.classList.add("red-input");  
+    goalInput.classList.add("red-input");
     study.classList.remove("green");
     studyImage.src = "assets/study.svg";
     meditate.classList.remove("purple");
