@@ -65,6 +65,29 @@ function allValidation() {
   }
 }
 
+//Swap windows and display timerStart
+function toggleTimer(validation) {
+  if(validation === true && timerSection.classList.contains("remove")) {
+    timerSection.classList.remove("remove");
+    leftSection.classList.add("remove");
+    taskName.innerText = goalInput.value;
+    pageHeader.innerText = "Current Activity";
+    time.innerText = `${durationMinutesInput.value} : ${durationSecondsInput.value}`;
+  } else {
+    timerSection.classList.add("remove");
+    leftSection.classList.remove("remove");
+    alert("Please fix the errors");
+  }
+}
+
+
+// function generateAlert() {
+//   var uniqueWarnings = Array.from(new Set(errorLog));
+//   for (var i = 0; i < uniqueWarnings.size; i++) {
+//     //use string methods to add warnings to single block string
+//   }
+// }
+
 durationMinutesInput.addEventListener("change", function() {
     numberOnly(durationMinutesInput,durationMinutesWarning);
 });
@@ -75,4 +98,5 @@ durationSecondsInput.addEventListener("change", function() {
 
 startButton.addEventListener("click", function() {
     var validation = allValidation();
+    toggleTimer(validation);
 });
