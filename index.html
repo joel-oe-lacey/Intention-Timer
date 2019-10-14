@@ -12,8 +12,8 @@
     </header>
     <div class="alignment">
       <main class="main-content">
-        <h1>New Activity</h1>
-        <section class="timer-section">
+        <h1 id = "page-header">New Activity</h1>
+        <section class="timer-section remove">
           <p id="taskName">placeholder</p>
           <p id="time">time</p>
           <button id="timer-start" type="button" name="startButton">Start</button>
@@ -21,9 +21,11 @@
         <section class="left-section">
           <p>Select a category:</p>
           <div class="category-selection">
+            <p>Select a category:</p>
             <button id="study-button" type="button" name="study"><img id="study-image" src="assets/study.svg"/>Study</button>
             <button id="meditate-button" type="button" name="meditate"><img id="meditate-image" src="assets/meditate.svg"/>Meditate</button>
             <button id="exercise-button" type="button" name="exercise"><img id="exercise-image" src="assets/exercise.svg"/>Exercise</button>
+            <p class="hide" id="activity-warning"><img id="error-icon" src="assets/warning.svg"/>Please select an activity.</p>
           </div>
           <form class="goal-form" action="index.html" method="post">
             <label for="goal">What would you like to acomplish during this time?</label>
