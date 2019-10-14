@@ -51,14 +51,36 @@ function valuesEntered(inputBox, warning) {
   }
 }
 
+function activitySelected() {
+  var studyClass = study.classList.contains("green");
+  var meditateClass = meditate.classList.contains("purple");
+  var exerciseClass = exercise.classList.contains("red");
+
+  if(studyClass === true) {
+    timerStart.classList.add("green");
+    return true;
+  } else if (meditateClass === true) {
+    timerStart.classList.add("purple");
+    return true;
+  } else if (exerciseClass === true) {
+    timerStart.classList.add("red");
+    return true;
+  } else {
+    activityWarning.classList.remove("hide");
+    return false;
+    }
+  }
+
+
 function allValidation() {
   //need to add a line for activity selection
+  var activity = activitySelected();
   var goal = valuesEntered(goalInput, goalWarning);
   var minutes = valuesEntered(durationMinutesInput, durationMinutesWarning);
   var seconds = valuesEntered(durationSecondsInput, durationSecondsWarning);
 
   //check to see if all values are entered
-  if(goal === true && minutes === true && seconds === true) {
+  if(activity === true && goal === true && minutes === true && seconds === true) {
     return true;
   } else {
     return false;
@@ -128,6 +150,7 @@ function countDisplay() {
     var seconds = inputSeconds % 60;
 
     // Assign display values to innerText
+    if (mi)
     time.innerText = `${minutes} : ${seconds}`;
 
     // Decriment by 1
