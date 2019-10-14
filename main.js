@@ -1,15 +1,25 @@
-
-//Target inputs, warnings and start button
+// INPUT VALIDATION
+// Target inputs, warnings and start button
 var durationMinutesInput = document.querySelector("#duration-minutes");
 var durationMinutesWarning = document.querySelector("#minutes-warning");
 var durationSecondsInput = document.querySelector("#duration-seconds");
 var durationSecondsWarning = document.querySelector("#seconds-warning");
 var goalInput = document.querySelector("#goal-input");
 var goalWarning = document.querySelector("#goal-warning");
+var activityWarning = document.querySelector("#activity-warning");
+var timerSection = document.querySelector(".timer-section");
+var taskName = document.querySelector("#taskName");
+var timerTime = document.querySelector("#time");
+var timerStart = document.querySelector("#timer-start");
+var leftSection = document.querySelector(".left-section");
+var pageHeader = document.querySelector("#page-header");
+
+var errorLog = [];
+var i = 0;
 var startButton = document.querySelector("#start-button");
 
 // Define function to check if user inputs number
-function numberValidation(inputBox, warning) {
+function numberOnly(inputBox, warning) {
   // Define allowed character set within brackets, in this case only numbers
   // + checks that it matches the character set at least once, ^ and $ make sure the beginning and end match
   var regex = /^[0-9]+$/;
@@ -17,41 +27,142 @@ function numberValidation(inputBox, warning) {
 
   // Warnings start with hidden class, remove this if the user enters a non-number
   if (testValues.match(regex)===null) {
-    warning.classList.remove('hide');
+    warning.classList.remove("hide");
     inputBox.value = "";
   } else {
-    warning.classList.add('hide');
+    warning.classList.add("hide");
   }
 }
 
-// Define a function to see if the user inputted anything into goal input
-function valueEntered(inputBox, warning) {
+// Define a function to see if the user inputted anything into goal input, or if any other fields are missing
+// check to see button press, check to see a number is entered
+function valuesEntered(inputBox, warning) {
   var testValues = inputBox.value;
-
-  //Check if the user entered any characters to the goal input, if so show warning, else hide
+//Check if the user entered any characters to the goal input, if so show warning
+//Alternatively show warning if no value is entered
   if(testValues.length === 0) {
-    warning.classList.remove('hide');
+    warning.classList.remove("hide");
+    // errorLog[i] = warning.innerText;
+    // i++;
+    return false;
   } else {
-    warning.classList.add('hide');
+    warning.classList.add("hide");
+    return true;
   }
 }
 
-// Execute functions based on user input field interaction, or start button click
+function activitySelected() {
+  var studyClass = study.classList.contains("green");
+  var meditateClass = meditate.classList.contains("purple");
+  var exerciseClass = exercise.classList.contains("red");
+
+  if(studyClass === true) {
+    timerStart.classList.add("green");
+    return true;
+  } else if (meditateClass === true) {
+    timerStart.classList.add("purple");
+    return true;
+  } else if (exerciseClass === true) {
+    timerStart.classList.add("red");
+    return true;
+  } else {
+    activityWarning.classList.remove("hide");
+    return false;
+    }
+  }
+
+
+function allValidation() {
+  //need to add a line for activity selection
+  var activity = activitySelected();
+  var goal = valuesEntered(goalInput, goalWarning);
+  var minutes = valuesEntered(durationMinutesInput, durationMinutesWarning);
+  var seconds = valuesEntered(durationSecondsInput, durationSecondsWarning);
+
+  //check to see if all values are entered
+  if(activity === true && goal === true && minutes === true && seconds === true) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//Swap windows and display timerStart
+function toggleTimer(validation) {
+  if(validation === true && timerSection.classList.contains("remove")) {
+    timerSection.classList.remove("remove");
+    leftSection.classList.add("remove");
+    taskName.innerText = goalInput.value;
+    pageHeader.innerText = "Current Activity";
+    time.innerText = `${durationMinutesInput.value} : ${durationSecondsInput.value}`;
+  } else {
+    timerSection.classList.add("remove");
+    leftSection.classList.remove("remove");
+    alert("Please fix the errors");
+  }
+}
+
+// function generateAlert() {
+//   var uniqueWarnings = Array.from(new Set(errorLog));
+//   for (var i = 0; i < uniqueWarnings.size; i++) {
+//     //use string methods to add warnings to single block string
+//   }
+// }
+
 durationMinutesInput.addEventListener("change", function() {
-    numberValidation(durationMinutesInput, durationMinutesWarning);
+    numberOnly(durationMinutesInput,durationMinutesWarning);
 });
 
 durationSecondsInput.addEventListener("change", function() {
-    numberValidation(durationSecondsInput, durationSecondsWarning);
+    numberOnly(durationSecondsInput,durationSecondsWarning);
 });
 
 startButton.addEventListener("click", function() {
-    valueEntered(goalInput, goalWarning);
+    var validation = allValidation();
+    toggleTimer(validation);
+    window.inputSeconds = convertInputSeconds();
 });
 
+timerStart.addEventListener("click", function() {
+  setInterval(function() {
+    countDisplay();
+  }, 1000);
+});
 
+// TIMER
 
+// Define input times and conver to date format
+// Convert user input to seconds for smoother operation
+function convertInputSeconds() {
+  //Fetch minute and second inputs
+  var minutes = parseInt(durationMinutesInput.value,10);
+  var seconds = parseInt(durationSecondsInput.value);
 
+  //Convert to seconds
+  var totalSeconds = (minutes * 60) + seconds;
+  return totalSeconds;
+}
+
+// Looped counter and display function
+function countDisplay() {
+    // Convert time back to display valuse
+    var minutes = Math.floor(inputSeconds / 60);
+    var seconds = inputSeconds % 60;
+
+    // Assign display values to innerText
+    if (mi)
+    time.innerText = `${minutes} : ${seconds}`;
+
+    // Decriment by 1
+    inputSeconds = inputSeconds - 1;
+
+    // Stop setInterval counter when time hits 0
+    if (inputSeconds === 0) {
+      clearInterval(counter);
+    }
+}
+
+// COLOR CHANGE
 var study = document.querySelector('#study-button');
 var meditate = document.querySelector('#meditate-button');
 var exercise = document.querySelector('#exercise-button');

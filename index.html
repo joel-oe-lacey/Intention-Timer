@@ -12,7 +12,12 @@
     </header>
     <div class="alignment">
       <main class="main-content">
-        <h1>New Activity</h1>
+        <h1 id = "page-header">New Activity</h1>
+        <section class="timer-section remove">
+          <p id="taskName">placeholder</p>
+          <p id="time">time</p>
+          <button id="timer-start" type="button" name="startButton">Start</button>
+        </section>
         <section class="left-section">
           <p>Select a category:</p>
           <div class="category-selection">
@@ -20,18 +25,20 @@
             <button id="meditate-button" type="button" name="meditate"><img id="meditate-image" src="assets/meditate.svg"/>Meditate</button>
             <button id="exercise-button" type="button" name="exercise"><img id="exercise-image" src="assets/exercise.svg"/>Exercise</button>
           </div>
+          <div>
+            <p class="hide" id="activity-warning"><img id="error-icon" src="assets/warning.svg"/>Please select an activity.</p>
+          </div>
           <form class="goal-form" action="index.html" method="post">
             <label for="goal">What would you like to acomplish during this time?</label>
             <input id="goal-input" type="text" name="goal">
             <p class="hide" id="goal-warning"><img id="error-icon" src="assets/warning.svg"/>A description is required.</p>
             <label for="duration-minutes">Minutes</label>
-            <input id="duration-minutes" type="text" name="duration-minutes" value=5>
+            <input id="duration-minutes" type="text" name="duration-minutes">
             <p class="hide" id="minutes-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
             <label for="duration-seconds">Seconds</label>
-            <input id="duration-seconds" type="text" name="duration-seconds" value=0>
+            <input id="duration-seconds" type="text" name="duration-seconds">
             <p class="hide" id="seconds-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
             <button id="start-button" type="button" name="button">Start Activity</button>
-
           </form>
         </section>
       </main>
