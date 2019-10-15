@@ -87,6 +87,7 @@ button img {
   margin: 3%;
   display: flex;
   flex-flow: column wrap;
+  flex-wrap: wrap;
 }
 
 /* temorary hide */
@@ -115,6 +116,8 @@ button img {
   width: 100%;
   /* margin-top: 40px; */
   margin-left: 10%
+  /* display:flex;
+  flex-wrap: wrap; */
 }
 
 #goal-input {
