@@ -28,17 +28,29 @@
           <div>
             <p class="hide" id="activity-warning"><img id="error-icon" src="assets/warning.svg"/>Please select an activity.</p>
           </div>
-          <form class="goal-form" action="index.html" method="post">
-            <label for="goal">What would you like to acomplish during this time?</label>
-            <input id="goal-input" type="text" name="goal">
-            <p class="hide" id="goal-warning"><img id="error-icon" src="assets/warning.svg"/>A description is required.</p>
-            <label for="duration-minutes">Minutes</label>
-            <input id="duration-minutes" type="text" name="duration-minutes">
-            <p class="hide" id="minutes-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
-            <label for="duration-seconds">Seconds</label>
-            <input id="duration-seconds" type="text" name="duration-seconds">
-            <p class="hide" id="seconds-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
-            <button id="start-button" type="button" name="button">Start Activity</button>
+          <section>
+            <section>
+              <form class="goal-form" action="index.html" method="post">
+                <label for="goal">What would you like to acomplish during this time?</label>
+                <input id="goal-input" type="text" name="goal">
+                <p class="hide" id="goal-warning"><img id="error-icon" src="assets/warning.svg"/>A description is required.</p>
+            </section>
+              <section id ="time-wrapper">
+                <div class= "minutes">
+                  <label for="duration-minutes">Minutes</label>
+                  <br>
+                  <input id="duration-minutes" type="text" name="duration-minutes">
+                  <p class="hide" id="minutes-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
+               </div>
+               <div class="seconds">
+                  <label for="duration-seconds">Seconds</label>
+                  <br>
+                  <input id="duration-seconds" type="text" name="duration-seconds">
+                  <p class="hide" id="seconds-warning"><img id="error-icon" src="assets/warning.svg"/>Please enter a number.</p>
+                  <button id="start-button" type="button" name="button">Start Activity</button>
+              </div>
+             </section>
+          </section>
           </form>
         </section>
       </main>
