@@ -21,6 +21,8 @@ header h1 {
 
 p {
   margin-left: 10%;
+  /* margin-top: 5%;
+  margin-bottom: 10px; */
 }
 /* temporary width placeholder */
 button {
@@ -53,6 +55,7 @@ button img {
   height: 20px;
   width: 20px;
   fill: #B3FD78;
+  margin-top: 15px;
 }
 
 #start-button {
@@ -84,6 +87,7 @@ button img {
   margin: 3%;
   display: flex;
   flex-flow: column wrap;
+  flex-wrap: wrap;
 }
 
 /* temorary hide */
@@ -110,15 +114,17 @@ button img {
 .goal-form {
   height: 65%;
   width: 100%;
-  margin-top: 50px;
+  /* margin-top: 40px; */
   margin-left: 10%
+  /* display:flex;
+  flex-wrap: wrap; */
 }
 
 #goal-input {
   /* margin-left: 10%; */
   margin-right: 10%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 0px;
   width: 80%;
   background: transparent;
   /* border: none; */
@@ -127,9 +133,9 @@ button img {
 
 #duration-minutes {
   margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-right: 0px;
+  margin-top: 30px;
+  margin-bottom: 00px;
   background: transparent;
   /* border: none;
   border-bottom: 1px solid #CBC9CF; */
@@ -138,25 +144,25 @@ button img {
 #duration-seconds {
   margin-left: 50px;
   margin-right: 50px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 0px;
   background: transparent;
   /* border: none;
   border-bottom: 1px solid #CBC9CF; */
 }
 
-.hide {
+/* .hide {
   opacity: 0;
   transition: opacity .25s ease-in-out;
-}
+} */
 
 .remove {
   display: none;
 }
 
-form * {
+/* form * {
   margin: 20px;
-}
+} */
 
 .green {
   color: #B3FD78;
