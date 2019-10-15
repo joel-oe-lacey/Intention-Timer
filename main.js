@@ -94,7 +94,7 @@ function toggleTimer(validation) {
     leftSection.classList.add("remove");
     taskName.innerText = goalInput.value;
     pageHeader.innerText = "Current Activity";
-    time.innerText = `${durationMinutesInput.value} : ${durationSecondsInput.value}`;
+    timeStructure(durationMinutesInput.value, durationSecondsInput.value);
   } else {
     timerSection.classList.add("remove");
     leftSection.classList.remove("remove");
@@ -124,9 +124,7 @@ startButton.addEventListener("click", function() {
 });
 
 timerStart.addEventListener("click", function() {
-  setInterval(function() {
-    countDisplay();
-  }, 1000);
+  window.timerExecute = setInterval(function() { countDisplay(); }, 1000);
 });
 
 // TIMER
@@ -136,30 +134,42 @@ timerStart.addEventListener("click", function() {
 function convertInputSeconds() {
   //Fetch minute and second inputs
   var minutes = parseInt(durationMinutesInput.value,10);
-  var seconds = parseInt(durationSecondsInput.value);
+  var seconds = parseInt(durationSecondsInput.value,10);
 
   //Convert to seconds
   var totalSeconds = (minutes * 60) + seconds;
   return totalSeconds;
 }
 
+function timeStructure(minutes, seconds) {
+    if (minutes < 10 && seconds < 10) {
+    time.innerText = `0${minutes} : 0${seconds}`;
+  } else if (minutes < 10) {
+    time.innerText = `0${minutes} : ${seconds}`;
+  } else if (seconds < 10) {
+    time.innerText = `${minutes} : 0${seconds}`;
+  } else {
+    time.innerText = `${minutes} : ${seconds}`;
+  }
+}
+
 // Looped counter and display function
 function countDisplay() {
+    // Stop setInterval counter when time hits 0
+    if (inputSeconds === 0) {
+      clearInterval(timerExecute);
+      alert('The timer is up!');
+    }
+
     // Convert time back to display valuse
     var minutes = Math.floor(inputSeconds / 60);
     var seconds = inputSeconds % 60;
 
     // Assign display values to innerText
-    if (mi)
-    time.innerText = `${minutes} : ${seconds}`;
+    timeStructure(minutes, seconds);
 
     // Decriment by 1
     inputSeconds = inputSeconds - 1;
-
-    // Stop setInterval counter when time hits 0
-    if (inputSeconds === 0) {
-      clearInterval(counter);
-    }
 }
 
 // COLOR CHANGE
