@@ -185,8 +185,10 @@ var meditateImage = document.querySelector('#meditate-image');
 var exerciseImage = document.querySelector('#exercise-image');
 
 function removeGreen() {
-  study.classList.remove("green");
   studyImage.src = "assets/study.svg";
+
+  study.classList.remove("green");
+
   goalWarning.classList.remove("green");
   activityWarning.classList.remove("green");
   durationMinutesWarning.classList.remove("green");
@@ -197,37 +199,46 @@ function removeGreen() {
   goalInput.classList.remove("green-input");
 }
 
+function removeRed() {
+  exerciseImage.src = "assets/exercise.svg";
+
+  exercise.classList.remove("red");
+
+  goalWarning.classList.remove("red");
+  activityWarning.classList.remove("red");
+  durationMinutesWarning.classList.remove("red");
+  durationSecondsWarning.classList.remove("red");
+
+  durationMinutesInput.classList.remove("red-input");
+  durationSecondsInput.classList.remove("red-input");
+  goalInput.classList.remove("red-input");
+}
+
+
 study.addEventListener('click', function(){
   if  (study.classList.contains("green")) {
     removeGreen()
   } else {
-    activityWarning.classList.remove("red");
     activityWarning.classList.remove("purple");
     activityWarning.classList.add("green");
-    durationMinutesInput.classList.remove("red-input");
     durationMinutesInput.classList.remove("purple-input");
     durationMinutesInput.classList.add("green-input");
-    durationMinutesWarning.classList.remove("red");
     durationMinutesWarning.classList.remove("purple");
     durationMinutesWarning.classList.add("green");
-    durationSecondsInput.classList.remove("red-input");
     durationSecondsInput.classList.remove("purple-input");
     durationSecondsInput.classList.add("green-input");
-    durationSecondsWarning.classList.remove("red");
     durationSecondsWarning.classList.remove("purple");
     durationSecondsWarning.classList.add("green");
-    exercise.classList.remove("red");
-    exerciseImage.src = "assets/exercise.svg";
-    goalInput.classList.remove("red-input");
     goalInput.classList.remove("purple-input");
     goalInput.classList.add("green-input");
-    goalWarning.classList.remove("red");
     goalWarning.classList.remove("purple");
     goalWarning.classList.add("green");
     meditate.classList.remove("purple");
     meditateImage.src = "assets/meditate.svg";
     study.classList.add("green");
     studyImage.src = "assets/study-active.svg";
+
+    removeRed()
   }
 })
 
@@ -245,38 +256,23 @@ meditate.addEventListener('click', function(){
   } else {
     meditate.classList.add("purple");
     meditateImage.src = "assets/meditate-active.svg";
-    activityWarning.classList.remove("red");
     activityWarning.classList.add("purple");
-    goalWarning.classList.remove("red");
     goalWarning.classList.add("purple");
-    durationMinutesWarning.classList.remove("red");
     durationMinutesWarning.classList.add("purple");
-    durationSecondsWarning.classList.remove("red");
     durationSecondsWarning.classList.add("purple");
-    durationMinutesInput.classList.remove("red-input");
     durationMinutesInput.classList.add("purple-input");
-    durationSecondsInput.classList.remove("red-input");
     durationSecondsInput.classList.add("purple-input");
-    goalInput.classList.remove("red-input");
     goalInput.classList.add("purple-input");
-    exercise.classList.remove("red");
-    exerciseImage.src = "assets/exercise.svg";
 
     removeGreen()
+    removeRed()
   }
 })
 
+
 exercise.addEventListener('click', function(){
   if  (exercise.classList.contains("red")) {
-    exercise.classList.remove("red");
-    exerciseImage.src = "assets/exercise.svg";
-    goalWarning.classList.remove("red");
-    activityWarning.classList.remove("red");
-    durationMinutesWarning.classList.remove("red");
-    durationSecondsWarning.classList.remove("red");
-    durationMinutesInput.classList.remove("red-input");
-    durationSecondsInput.classList.remove("red-input");
-    goalInput.classList.remove("red-input");
+    removeRed()
   } else {
     exercise.classList.add("red");
     exerciseImage.src = "assets/exercise-active.svg";
