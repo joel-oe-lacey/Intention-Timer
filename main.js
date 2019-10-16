@@ -253,6 +253,7 @@ meditate.addEventListener('click', function(){
   } else {
     meditate.classList.add("purple");
     meditateImage.src = "assets/meditate-active.svg";
+
     activityWarning.classList.add("purple");
     goalWarning.classList.add("purple");
     durationMinutesWarning.classList.add("purple");
