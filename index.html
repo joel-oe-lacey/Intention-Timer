@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Intention Timer</title>
-    <link href="https://fonts.google.com/?query=mont&selection.family=Montserrat:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
@@ -19,7 +19,7 @@
           <button id="timer-start" type="button" name="startButton">Start</button>
         </section>
         <section class="left-section">
-          <p>Select a category:</p>
+          <label id="category-label">Select a category:</label>
           <div class="category-selection">
             <button id="study-button" type="button" name="study"><img id="study-image" src="assets/study.svg"/>Study</button>
             <button id="meditate-button" type="button" name="meditate"><img id="meditate-image" src="assets/meditate.svg"/>Meditate</button>
@@ -28,7 +28,6 @@
           <div>
             <p class="hide" id="activity-warning"><img id="error-icon" src="assets/warning.svg"/>Please select an activity.</p>
           </div>
-          <section>
             <section>
               <form class="goal-form" action="index.html" method="post">
                 <label for="goal">What would you like to acomplish during this time?</label>
@@ -50,7 +49,6 @@
                   <button id="start-button" type="button" name="button">Start Activity</button>
               </div>
              </section>
-          </section>
           </form>
         </section>
       </main>
