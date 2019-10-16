@@ -13,9 +13,6 @@ var timerTime = document.querySelector("#time");
 var timerStart = document.querySelector("#timer-start");
 var leftSection = document.querySelector(".left-section");
 var pageHeader = document.querySelector("#page-header");
-
-var errorLog = [];
-var i = 0;
 var startButton = document.querySelector("#start-button");
 
 // Define function to check if user inputs number
@@ -102,13 +99,6 @@ function toggleTimer(validation) {
   }
 }
 
-// function generateAlert() {
-//   var uniqueWarnings = Array.from(new Set(errorLog));
-//   for (var i = 0; i < uniqueWarnings.size; i++) {
-//     //use string methods to add warnings to single block string
-//   }
-// }
-
 durationMinutesInput.addEventListener("change", function() {
     numberOnly(durationMinutesInput,durationMinutesWarning);
 });
@@ -182,108 +172,67 @@ function countDisplay() {
 var study = document.querySelector('#study-button');
 var meditate = document.querySelector('#meditate-button');
 var exercise = document.querySelector('#exercise-button');
-
-// var green = document.querySelector('.green');
-// var purple = document.querySelector('.purple');
-// var red = document.querySelector('.blue');
 var studyImage = document.querySelector('#study-image');
 var meditateImage = document.querySelector('#meditate-image');
 var exerciseImage = document.querySelector('#exercise-image');
 
-function removeGreen() {
-  studyImage.src = "assets/study.svg";
-  study.classList.remove("green");
-  goalWarning.classList.remove("green");
-  activityWarning.classList.remove("green");
-  durationMinutesWarning.classList.remove("green");
-  durationSecondsWarning.classList.remove("green");
-  durationMinutesInput.classList.remove("green-input");
-  durationSecondsInput.classList.remove("green-input");
-  goalInput.classList.remove("green-input");
+
+function removeColor(btn, color){
+  //removing selected button and image color
+  btn.classList.remove(color);
+  `${btn}Image`.src = `assets/${btn}.svg`;
+
+  //removing the color of the other inputs based on selected color
+  goalWarning.classList.remove(`${color}`);
+  activityWarning.classList.remove(`${color}`);
+  durationMinutesWarning.classList.remove(`${color}`);
+  durationSecondsWarning.classList.remove(`${color}`);
+  durationMinutesInput.classList.remove(`${color}-input`);
+  durationSecondsInput.classList.remove(`${color}-input`);
+  goalInput.classList.remove(`${color}-input`);
 }
 
-function removeRed() {
-  exerciseImage.src = "assets/exercise.svg";
-  exercise.classList.remove("red");
-  goalWarning.classList.remove("red");
-  activityWarning.classList.remove("red");
-  durationMinutesWarning.classList.remove("red");
-  durationSecondsWarning.classList.remove("red");
-  durationMinutesInput.classList.remove("red-input");
-  durationSecondsInput.classList.remove("red-input");
-  goalInput.classList.remove("red-input");
-}
+function addColor(btn, color) {
+  //changing selected button and image color
+  btn.classList.add(color);
+  `${btn}Image`.src = `assets/${btn}-active.svg`;
 
-function removePurple(){
-  meditate.classList.remove("purple");
-  meditateImage.src = "assets/meditate.svg";
-  goalWarning.classList.remove("purple");
-  activityWarning.classList.remove("purple");
-  durationMinutesWarning.classList.remove("purple");
-  durationSecondsWarning.classList.remove("purple");
-  durationMinutesInput.classList.remove("purple-input");
-  durationSecondsInput.classList.remove("purple-input");
-  goalInput.classList.remove("purple-input");
+  //changing the color of the other inputs based on selected color
+  activityWarning.classList.add(`${color}`);
+  durationMinutesInput.classList.add(`${color}-input`);
+  durationMinutesWarning.classList.add(`${color}`);
+  durationSecondsInput.classList.add(`${color}-input`);
+  durationSecondsWarning.classList.add(`${color}`);
+  goalInput.classList.add(`${color}-input`);
+  goalWarning.classList.add(`${color}`);
 }
-
 
 study.addEventListener('click', function(){
-  if  (study.classList.contains("green")) {
-    removeGreen()
-  } else {
-    activityWarning.classList.add("green");
-    durationMinutesInput.classList.add("green-input");
-    durationMinutesWarning.classList.add("green");
-    durationSecondsInput.classList.add("green-input");
-    durationSecondsWarning.classList.add("green");
-    goalInput.classList.add("green-input");
-    goalWarning.classList.add("green");
-    meditateImage.src = "assets/meditate.svg";
-    study.classList.add("green");
-    studyImage.src = "assets/study-active.svg";
-
-    removeRed()
-    removePurple()
-  }
-})
+    if  (study.classList.contains("green")) {
+      removeColor(study,'green');
+    } else {
+      addColor(study,'green');
+      removeColor(exercise,'red');
+      removeColor(meditate,'purple');
+    }
+  })
 
 meditate.addEventListener('click', function(){
-  if  (meditate.classList.contains("purple")) {
-  removePurple()
-  } else {
-    meditate.classList.add("purple");
-    meditateImage.src = "assets/meditate-active.svg";
-
-    activityWarning.classList.add("purple");
-    goalWarning.classList.add("purple");
-    durationMinutesWarning.classList.add("purple");
-    durationSecondsWarning.classList.add("purple");
-    durationMinutesInput.classList.add("purple-input");
-    durationSecondsInput.classList.add("purple-input");
-    goalInput.classList.add("purple-input");
-
-    removeGreen()
-    removeRed()
-  }
-})
-
+    if  (meditate.classList.contains("purple")) {
+      removeColor(meditate,'purple');
+    } else {
+      addColor(meditate,'purple');
+      removeColor(study,'green');
+      removeColor(exercise,'red');
+    }
+  })
 
 exercise.addEventListener('click', function(){
-  if  (exercise.classList.contains("red")) {
-    removeRed()
-  } else {
-    exercise.classList.add("red");
-    exerciseImage.src = "assets/exercise-active.svg";
-    activityWarning.classList.add("red");
-    goalWarning.classList.add("red");
-    durationMinutesWarning.classList.add("red");
-    durationSecondsWarning.classList.add("red");
-    durationMinutesInput.classList.add("red-input");
-    durationSecondsInput.classList.add("red-input");
-    goalInput.classList.add("red-input");
-    meditateImage.src = "assets/meditate.svg";
-
-    removePurple()
-    removeGreen()
-  }
-})
+    if  (exercise.classList.contains("red")) {
+      removeColor(exercise,'red');
+    } else {
+      addColor(exercise,'red');
+      removeColor(meditate,'purple');
+      removeColor(study,'green');
+    }
+  })
