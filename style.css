@@ -66,6 +66,7 @@ button img {
 .alignment {
   display: flex;
   background-color: #2B2733;
+  min-height: 100vh;
 }
 
 .main-content {
