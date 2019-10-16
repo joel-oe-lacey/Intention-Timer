@@ -173,6 +173,7 @@ function countDisplay() {
 }
 
 // COLOR CHANGE
+//create an event.target.innerText of button name, can we grab whole object and consolidate study and studyImage fetch?
 var study = document.querySelector('#study-button');
 var meditate = document.querySelector('#meditate-button');
 var exercise = document.querySelector('#exercise-button');
