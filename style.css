@@ -175,10 +175,10 @@ button img {
   border-bottom: 1px solid #CBC9CF; */
 }
 
-.hide {
+/* .hide {
   opacity: 0;
   transition: opacity .25s ease-in-out;
-}
+} */
 
 .remove {
   display: none;
