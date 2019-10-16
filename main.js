@@ -107,31 +107,42 @@ durationSecondsInput.addEventListener("change", function() {
     numberOnly(durationSecondsInput,durationSecondsWarning);
 });
 
+//set a global second count to allow timer count, check if validations pass to show timer
 startButton.addEventListener("click", function() {
+    window.inputSeconds = convertInputSeconds();
     var validation = allValidation();
     toggleTimer(validation);
-    window.inputSeconds = convertInputSeconds();
 });
 
+//launch timer function to run each second
 timerStart.addEventListener("click", function() {
+  timerStart.disabled = true;
   window.timerExecute = setInterval(function() { countDisplay(); }, 1000);
 });
 
 // TIMER
 
-// Define input times and conver to date format
-// Convert user input to seconds for smoother operation
+//convert to total second count for timer iteration
 function convertInputSeconds() {
-  //Fetch minute and second inputs
-  var minutes = parseInt(durationMinutesInput.value,10);
-  var seconds = parseInt(durationSecondsInput.value,10);
+  var minutes = durationMinutesInput.value;
+  var seconds = durationSecondsInput.value;
 
-  //Convert to seconds
+  //Fetch minute and second inputs, convert to number and floor if decimal
+  minutes = Math.floor(parseInt(minutes,10));
+  seconds = Math.floor(parseInt(seconds,10));
+
+  //Convert to total second count
   var totalSeconds = (minutes * 60) + seconds;
   return totalSeconds;
 }
 
-function timeStructure(minutes, seconds) {
+//display structure function
+function timeStructure() {
+    //seperate out into minutes and seconds
+    var minutes = Math.floor(inputSeconds / 60);
+    var seconds = inputSeconds % 60;
+
+    //display and add 0s when single digit
     if (minutes < 10 && seconds < 10) {
     time.innerText = `0${minutes} : 0${seconds}`;
   } else if (minutes < 10) {
@@ -150,14 +161,8 @@ function countDisplay() {
       clearInterval(timerExecute);
       alert('The timer is up!');
     }
-
-    // Convert time back to display valuse
-    var minutes = Math.floor(inputSeconds / 60);
-    var seconds = inputSeconds % 60;
-
-    // Assign display values to innerText
-    timeStructure(minutes, seconds);
-
+    //round and display values to innerText
+    timeStructure();
     // Decriment by 1
     inputSeconds = inputSeconds - 1;
 }
