@@ -176,24 +176,30 @@ function countDisplay() {
 var study = document.querySelector('#study-button');
 var meditate = document.querySelector('#meditate-button');
 var exercise = document.querySelector('#exercise-button');
-var green = document.querySelector('.green');
-var purple = document.querySelector('.purple');
-var red = document.querySelector('.blue');
+
+// var green = document.querySelector('.green');
+// var purple = document.querySelector('.purple');
+// var red = document.querySelector('.blue');
 var studyImage = document.querySelector('#study-image');
 var meditateImage = document.querySelector('#meditate-image');
 var exerciseImage = document.querySelector('#exercise-image');
 
+function removeGreen() {
+  study.classList.remove("green");
+  studyImage.src = "assets/study.svg";
+  goalWarning.classList.remove("green");
+  activityWarning.classList.remove("green");
+  durationMinutesWarning.classList.remove("green");
+  durationSecondsWarning.classList.remove("green");
+
+  durationMinutesInput.classList.remove("green-input");
+  durationSecondsInput.classList.remove("green-input");
+  goalInput.classList.remove("green-input");
+}
+
 study.addEventListener('click', function(){
   if  (study.classList.contains("green")) {
-    study.classList.remove("green");
-    studyImage.src = "assets/study.svg";
-    goalWarning.classList.remove("green");
-    activityWarning.classList.remove("green");
-    durationMinutesWarning.classList.remove("green");
-    durationSecondsWarning.classList.remove("green");
-    durationMinutesInput.classList.remove("green-input");
-    durationSecondsInput.classList.remove("green-input");
-    goalInput.classList.remove("green-input");
+    removeGreen()
   } else {
     activityWarning.classList.remove("red");
     activityWarning.classList.remove("purple");
@@ -239,31 +245,24 @@ meditate.addEventListener('click', function(){
   } else {
     meditate.classList.add("purple");
     meditateImage.src = "assets/meditate-active.svg";
-    activityWarning.classList.remove("green");
     activityWarning.classList.remove("red");
     activityWarning.classList.add("purple");
     goalWarning.classList.remove("red");
-    goalWarning.classList.remove("green");
     goalWarning.classList.add("purple");
     durationMinutesWarning.classList.remove("red");
-    durationMinutesWarning.classList.remove("green");
     durationMinutesWarning.classList.add("purple");
     durationSecondsWarning.classList.remove("red");
-    durationSecondsWarning.classList.remove("green");
     durationSecondsWarning.classList.add("purple");
     durationMinutesInput.classList.remove("red-input");
-    durationMinutesInput.classList.remove("green-input");
     durationMinutesInput.classList.add("purple-input");
     durationSecondsInput.classList.remove("red-input");
-    durationSecondsInput.classList.remove("green-input");
     durationSecondsInput.classList.add("purple-input");
     goalInput.classList.remove("red-input");
-    goalInput.classList.remove("green-input");
     goalInput.classList.add("purple-input");
-    study.classList.remove("green");
-    studyImage.src = "assets/study.svg";
     exercise.classList.remove("red");
     exerciseImage.src = "assets/exercise.svg";
+
+    removeGreen()
   }
 })
 
@@ -281,30 +280,23 @@ exercise.addEventListener('click', function(){
   } else {
     exercise.classList.add("red");
     exerciseImage.src = "assets/exercise-active.svg";
-    activityWarning.classList.remove("green");
     activityWarning.classList.remove("purple");
     activityWarning.classList.add("red");
-    goalWarning.classList.remove("green");
     goalWarning.classList.remove("purple");
     goalWarning.classList.add("red");
-    durationMinutesWarning.classList.remove("green");
     durationMinutesWarning.classList.remove("purple");
     durationMinutesWarning.classList.add("red");
-    durationSecondsWarning.classList.remove("green");
     durationSecondsWarning.classList.remove("purple");
     durationSecondsWarning.classList.add("red");
-    durationMinutesInput.classList.remove("green-input");
     durationMinutesInput.classList.remove("purple-input");
     durationMinutesInput.classList.add("red-input");
-    durationSecondsInput.classList.remove("green-input");
     durationSecondsInput.classList.remove("purple-input");
     durationSecondsInput.classList.add("red-input");
-    goalInput.classList.remove("green-input");
     goalInput.classList.remove("purple-input");
     goalInput.classList.add("red-input");
-    study.classList.remove("green");
-    studyImage.src = "assets/study.svg";
     meditate.classList.remove("purple");
     meditateImage.src = "assets/meditate.svg";
+
+    removeGreen()
   }
 })
