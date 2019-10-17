@@ -43,8 +43,11 @@ the image as closely as possible.
 * When the timer completes, an alert appears in the browser, letting the user know that the time is up.
 
 
-## My Finished site
-![Our Site]()
-![]()
+## Our Finished site
+![Our Site](https://user-images.githubusercontent.com/54858455/66968619-4acdff00-f043-11e9-8e7e-d9bb1d378824.png)
+![image](https://user-images.githubusercontent.com/54858455/66968678-984a6c00-f043-11e9-99ce-d3b24b1fb49c.png)
+![image](https://user-images.githubusercontent.com/54858455/66968725-b7e19480-f043-11e9-87ab-ab2f21364cb9.png)
+![image](https://user-images.githubusercontent.com/54858455/66968812-14dd4a80-f044-11e9-9b3c-4d94f6af3ef9.png)
+![image](https://user-images.githubusercontent.com/54858455/66968873-4d7d2400-f044-11e9-8def-c9634f5087fe.png)
 
 [The GitHub Repository](https://github.com/joel-oe-lacey/Intention-Timer)
