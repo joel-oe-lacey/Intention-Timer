@@ -49,6 +49,16 @@ durationMinutesInput.addEventListener('change', function() {
 durationSecondsInput.addEventListener('change', function() {
     numberOnly(durationSecondsInput,durationSecondsWarning);
 });
+/// refactor attempt at 2 above functions
+var timeSection = document.querySelector('#time-wrapper');
+
+function selectActivity(event) {
+  activityType = event.target.id;
+
+timeSection.addEventListener('change', function(){
+  numberOnly(`duration${input}Input`,`duration${input}Warning`);
+});
+
 
 function valuesEntered(inputBox, warning) {
   var testValues = inputBox.value;
